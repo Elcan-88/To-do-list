@@ -12,13 +12,13 @@
 
 	<div class="container">
 		<div class="card">
-			<div class="card-header"></div>
-			<div class="card-body">
-				<h1>TO DO LIST</h1>
+			<div class="card-header">
 				<form method="post" id="new-task">
-					<input type="text" id="task" autofocus autocomplete="off" placeholder="Planın nədir?">
-					<input type="submit" id="submit" value="Add">	
+					<input type="text" id="task" autofocus autocomplete="off" placeholder="Enter an activity...">
+					<button id="submit"></button>	
 				</form>
+			</div>
+			<div class="card-body">
 				<ul class="tasks"></ul>
 			</div>
 		</div>
@@ -28,26 +28,28 @@
 
 	<script>
 		document.addEventListener("DOMContentLoaded", () => {
+			const submit=document.getElementById("submit");
+			const task=document.getElementById("task");
 
-			document.getElementById("submit").disabled=true;
+			submit.disabled=true;
 
-			document.getElementById("task").onkeyup=() => {
-				if(document.getElementById("task").value.length > 0){
-					document.getElementById("submit").disabled=false;
+			task.onkeyup=() => {
+				if(task.value.length > 0){
+					submit.disabled=false;
 				}
 				else{
-					document.getElementById("submit").disabled=true;
+					submit.disabled=true;
 				}
 			}
 
 			document.getElementById("new-task").onsubmit=() => {
 				const li=document.createElement("li");
 
-				li.innerHTML=document.getElementById("task").value;
+				li.innerHTML=task.value;
 
 				document.querySelector(".tasks").append(li);
 
-				document.getElementById("task").value="";
+				task.value="";
 
 				return false;
 			};
