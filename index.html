@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>To Do List</title>
+	<link rel="stylesheet" href="style.css">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script src="app.js"></script>
+</head>
+<body>
+
+	<div class="container">
+		<div class="card">
+			<div class="card-header"></div>
+			<div class="card-body">
+				<h1>TO DO LIST</h1>
+				<form method="post" id="new-task">
+					<input type="text" id="task" autofocus autocomplete="off" placeholder="Planın nədir?">
+					<input type="submit" id="submit" value="Add">	
+				</form>
+				<ul class="tasks"></ul>
+			</div>
+		</div>
+	</div>
+
+	
+
+	<script>
+		document.addEventListener("DOMContentLoaded", () => {
+
+			document.getElementById("submit").disabled=true;
+
+			document.getElementById("task").onkeyup=() => {
+				if(document.getElementById("task").value.length > 0){
+					document.getElementById("submit").disabled=false;
+				}
+				else{
+					document.getElementById("submit").disabled=true;
+				}
+			}
+
+			document.getElementById("new-task").onsubmit=() => {
+				const li=document.createElement("li");
+
+				li.innerHTML=document.getElementById("task").value;
+
+				document.querySelector(".tasks").append(li);
+
+				document.getElementById("task").value="";
+
+				return false;
+			};
+
+		});
+	</script>
+
+
+
+</body>
+</html>

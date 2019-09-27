@@ -1,0 +1,9 @@
+*{
+	box-sizing: border-box;
+	font-family: Calibri, sans-serif;
+	outline: none;
+}
+
+ul{
+	list-style: none;
+}
