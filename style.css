@@ -28,7 +28,7 @@ ul{
 }
 
 .card-header #task{
-	height: 50px;
+	min-height: 50px;
 	width: 100%;
 	font-size: 1rem;
 	border: 0;
@@ -63,5 +63,61 @@ ul{
 }
 
 .card-body{
-	padding: 5em 0 0;
+	padding: 6em 1em 0;
+}
+
+ul.tasks li{
+	background: #fff;
+	height: 50px;
+	width: 100%;
+	border-radius: 5px;
+	box-shadow: 0 1px 2px rgba(44,62,80,0.10);
+	margin: 0 0 10px;
+	position: relative;
+	font-size: 1rem;
+	padding: 15px 0 0;
+	text-indent: 18px;
+}
+
+ul.tasks li .buttons{
+	position: absolute;
+	top: 0;
+	right: 0;
+	height: 50px;
+	width: 100px;
+	display: flex;
+}
+
+ul.tasks li .buttons button{
+	height: 50px;
+	width: 50px;
+	background: none;
+	border: 0;
+	position: relative;
+}
+
+ul.tasks li .buttons button i{
+	font-size: 1.1rem;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+ul.tasks li .buttons .remove{
+	color: #ee1111;
+}
+
+ul.tasks li .buttons .check{
+	color: #16e539;
+}
+
+ul.tasks li .buttons button:last-of-type:before{
+	content: "";
+	height: 30px;
+	width: 2px;
+	background: #edf0f1;
+	position: absolute;
+	top: 10px;
+	left: 0;
 }
