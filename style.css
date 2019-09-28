@@ -58,11 +58,10 @@ ul{
 	cursor: pointer;
 	z-index: 2;
 	font-size: 2.2rem;
-	font-weight: bold;
+	font-weight: 400;
 	color: #25b99a;
-	/*padding-bottom: 3px;*/
 }
 
 .card-body{
-	padding: 5em 0 0 0;
+	padding: 5em 0 0;
 }
