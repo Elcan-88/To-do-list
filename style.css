@@ -24,7 +24,7 @@ ul{
 	border-bottom-right-radius: 10px;
 	padding: 15px;
 	position: fixed;
-	box-shadow: 0 8px 10px rgba(0,0,0,0.2);
+	box-shadow: 0 2px 10px rgba(0,0,0,0.2);
 }
 
 .card-header #task{
@@ -94,14 +94,7 @@ ul.tasks li .buttons button{
 	background: none;
 	border: 0;
 	position: relative;
-}
-
-ul.tasks li .buttons button i{
 	font-size: 1.1rem;
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
 }
 
 ul.tasks li .buttons .remove{
@@ -110,14 +103,16 @@ ul.tasks li .buttons .remove{
 
 ul.tasks li .buttons .check{
 	color: #16e539;
+	z-index: 10;
+	position: absolute;
+	background: #fff;
+	right: 0;
 }
 
-ul.tasks li .buttons button:last-of-type:before{
-	content: "";
-	height: 30px;
-	width: 2px;
-	background: #edf0f1;
-	position: absolute;
-	top: 10px;
-	left: 0;
+ul.tasks li .buttons .full{
+	color: #16e539;
+}
+
+.toggle{
+	display: none;
 }
