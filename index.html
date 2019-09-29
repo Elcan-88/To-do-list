@@ -19,65 +19,12 @@
 				</form>
 			</div>
 			<div class="card-body">
-				<ul class="tasks">
-					<li>
-						This is item
-						<div class="buttons">
-							<button class="remove"><i class="fas fa-trash-alt"></i></button>
-							<button class="check"><i class="far fa-check-circle"></i></button>
-							<button class="full"><i class="fas fa-check-circle"></i></button>
-						</div>
-					</li>
-				</ul>
-				<!-- <a href="#" class="empty"><i class="far fa-check-circle"></i></button>
-				<a href="#" class="full"><i class="fas fa-check-circle"></i></button> -->
+				<ul class="tasks"></ul>
 			</div>
 		</div>
 	</div>
 
 	
-
-	<script>
-		document.addEventListener("DOMContentLoaded", () => {
-			const submit=document.getElementById("submit");
-			const task=document.getElementById("task");
-
-			submit.disabled=true;
-
-			task.onkeyup=() => {
-				if(task.value.length > 0){
-					submit.disabled=false;
-				}
-				else{
-					submit.disabled=true;
-				}
-			}
-
-			document.getElementById("new-task").onsubmit=() => {
-				const li=document.createElement("li");
-
-				li.innerHTML=task.value;
-
-				document.querySelector(".tasks").append(li);
-
-				task.value="";
-
-				return false;
-			};
-
-			document.querySelector(".check").onclick=() => {
-				document.querySelector(".check").classList.add("toggle");
-				document.querySelector(".full").classList.remove("toggle");
-			}	
-
-			document.querySelector(".full").onclick=() => {
-				document.querySelector(".full").classList.add("toggle");
-				document.querySelector(".check").classList.remove("toggle");
-			}		
-
-		});
-	</script>
-
 
 
 </body>
