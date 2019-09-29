@@ -128,21 +128,14 @@ ul.tasks li .buttons .check svg{
 	transition: background 0.2s ease;
 }
 
-ul.tasks li .buttons .check:hover svg{
-	fill: #fff;
+ul.tasks#completed li .buttons .check svg{
 	background: #25b99a;
+	fill: #fff;
 }
 
-/*ul.tasks li .buttons .check svg .fill{
-	background: rgba(37, 185, 154, 0.75);
-}*/
-
-/*ul.tasks li .buttons .check:hover svg{
-	background: rgba(37, 185, 154, 0.75);
+.card-body .line{
+	height: 2px;
+	width: 150px;
+	background: #ccc;
+	margin: 10px auto;
 }
-
-ul.tasks li .buttons .check:hover svg .fill{
-	background: rgba(37, 185, 154, 0.75);
-}*/
-
-

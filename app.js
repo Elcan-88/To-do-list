@@ -23,6 +23,17 @@ document.addEventListener("DOMContentLoaded", () => {
 		parent.removeChild(item);
 	}
 
+	function checkItem(){
+		var item=this.parentNode.parentNode;
+		var parent=item.parentNode;
+		var id=parent.id;
+
+		var target=(id === "todo") ? document.getElementById("completed") : document.getElementById("todo");
+
+		parent.removeChild(item);
+		target.insertBefore(item, target.childNodes[0]);
+	}
+
 	document.getElementById("new-task").onsubmit=() => {
 		const tasks=document.querySelector(".tasks");
 		const li=document.createElement("li");
@@ -40,6 +51,8 @@ document.addEventListener("DOMContentLoaded", () => {
 		var check=document.createElement("button");
 		check.classList.add("check");
 		check.innerHTML = completeSVG;
+
+		check.addEventListener("click", checkItem);
 
 		buttons.appendChild(remove);
 		buttons.appendChild(check);
